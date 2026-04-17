@@ -24,10 +24,10 @@ html{
   }
 
   #hero{
-    @apply relative h-screen w-full overflow-hidden flex;
+    @apply relative h-screen w-full overflow-hidden;
 
     h1{
-      @apply text-5xl font-bricolage;
+      @apply text-center text-[200px] font-bricolage font-bold;
     }
 
   }

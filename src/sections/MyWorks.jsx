@@ -3,17 +3,13 @@ import { Canvas } from '@react-three/fiber';
 import { ScrollControls, Environment, Float, Loader } from '@react-three/drei';
 import CircularCarousel from '../components/canvas/CircularCarousel';
 
-const Hero = () => {
+const MyWorks = () => {
   const IMAGES = [
     '/images/SpiderLily.jpg',
   ];
 
   return (
     <section id="hero">
-      <div className="padding-x">
-        <h1>Hi, I'm Candice </h1>
-        {/* <p>Front-End Developer who enjoys turning ideas into meaningful user experiences</p> */}
-      </div>
       <div className='h-full'>
         <Canvas>
             <CircularCarousel images={IMAGES}/>
@@ -23,4 +19,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default MyWorks
