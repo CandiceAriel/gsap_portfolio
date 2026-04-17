@@ -12,40 +12,43 @@ const images = [
 export default function MyWorksItem() {
   const textures = useTexture(images);
   const { camera } = useThree();
-  const baseZ = 2;
+
   const distance = camera.position.z;
   const vFov = THREE.MathUtils.degToRad(camera.fov);
   const visibleHeight = 2 * Math.tan(vFov / 2) * distance;
+  const baseHeight = visibleHeight * 0.5;
 
-  const baseHeight = visibleHeight * 0.6; // 🔥 60% of screen
-
-  const activeIndex = 1;
+  const quantity = textures.length;
+  const radius = 3; 
 
   return (
     <>
       {textures.map((tex, i) => {
-        if (!tex.image) return null;
+        if (!tex || !tex.image) return null;
 
         const aspect = tex.image.width / tex.image.height;
-        const offset = i - activeIndex;
-
-        const scale = offset === 0 ? 1 : 0.7;
-
-        const height = baseHeight * scale;
+        const height = baseHeight;
         const width = aspect * height;
 
+        const degrees = i * (360 / quantity);
+        const radians = THREE.MathUtils.degToRad(degrees);
+
         return (
-          <mesh
-            key={i}
-            position={[
-              offset * (width * 2),        // spread horizontally
-              0,
-              baseZ - Math.abs(offset) * 1.5 // push back
-            ]}
-          >
-            <planeGeometry args={[width, height]} />
-            <meshStandardMaterial map={tex} />
-          </mesh>
+          <group key={i} rotation={[0, radians, 0]}>
+            <mesh position={[0, 0, radius]} rotation={[0, 0, 0]}>
+              <planeGeometry args={[width, height]} />
+              {/* Since we aren't using RoundedBox or the <Image /> component,
+                standard PlaneGeometry is always a sharp rectangle.
+                To get rounded corners on a simple mesh, you usually 
+                apply a mask texture to 'alphaMap'.
+              */}
+              <meshBasicMaterial 
+                map={tex} 
+                transparent={true}
+                side={THREE.DoubleSide}
+              />
+            </mesh>
+          </group>
         );
       })}
     </>

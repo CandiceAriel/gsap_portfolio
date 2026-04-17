@@ -1,4 +1,4 @@
-import { useTexture, PerspectiveCamera } from "@react-three/drei";
+import { useTexture, PerspectiveCamera,OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 import MyWorksItem from "./ImageMeshes";
 
@@ -13,13 +13,14 @@ const Experience = () => {
       }
     >
       {/* 🎥 Camera */}
-      <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={20} />
+      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={50} />
 
       {/* 💡 Lighting */}
       <ambientLight intensity={0.7} />
       <directionalLight position={[3, 3, 3]} intensity={1} />
 
       <MyWorksItem />
+      <OrbitControls />
     </Suspense>
   );
 };
