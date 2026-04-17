@@ -5,7 +5,7 @@ import MyWorks from './sections/MyWorks'
 const App = () => {
   return (
     <main>
-      <Hero />
+      {/* <Hero /> */}
       <MyWorks />
     </main>
     

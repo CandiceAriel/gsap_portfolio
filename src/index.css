@@ -31,4 +31,8 @@ html{
     }
 
   }
+
+  #myWork{
+    @apply py-5;
+  }
 }

@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { ScrollControls, Environment, Float, Loader } from '@react-three/drei';
-import CircularCarousel from '../components/canvas/CircularCarousel';
 
 const Hero = () => {
   const IMAGES = [
@@ -16,7 +15,6 @@ const Hero = () => {
       </div>
       <div className='h-full'>
         <Canvas>
-            <CircularCarousel images={IMAGES}/>
         </Canvas>
       </div>
     </section>

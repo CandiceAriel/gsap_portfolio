@@ -1,18 +1,15 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { ScrollControls, Environment, Float, Loader } from '@react-three/drei';
-import CircularCarousel from '../components/canvas/CircularCarousel';
+import Experience from '../components/Experience';
 
 const MyWorks = () => {
-  const IMAGES = [
-    '/images/SpiderLily.jpg',
-  ];
 
   return (
-    <section id="hero">
-      <div className='h-full'>
+    <section id="myWork" className="h-screen w-full">
+      <div className="h-full w-full">
         <Canvas>
-            <CircularCarousel images={IMAGES}/>
+          <Experience />
         </Canvas>
       </div>
     </section>
