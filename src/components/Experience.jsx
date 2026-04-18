@@ -1,6 +1,6 @@
 import { useTexture, PerspectiveCamera,OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
-import MyWorksItem from "./ImageMeshes";
+import MyWorksItem from "./MyWorksItem";
 
 const Experience = () => {
   return (
