@@ -7,7 +7,7 @@ import { Leva } from 'leva';
 const MyWorks = () => {
 
   return (
-    <section id="myWork" className="h-screen w-full">
+    <section id="myWork" className="h-screen w-full bg-[url(/images/HeroBg.jpg)]  bg-cover bg-center">
       <div className="h-full w-full">
         <Leva />
         <Canvas>

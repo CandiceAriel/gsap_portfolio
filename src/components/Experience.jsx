@@ -25,7 +25,7 @@ const Experience = () => {
       }
     >
       {/* 🎥 Camera */}
-      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={50} />
+      <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={60} />
 
       {/* 💡 Lighting */}
       <ambientLight intensity={0.7} />
