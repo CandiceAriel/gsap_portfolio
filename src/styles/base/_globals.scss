@@ -1,0 +1,20 @@
+@use '../abstracts/spacing' as *;
+@use '../abstracts/colors' as *;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $black;
+}
+
+section,
+footer {
+  padding-left:  $page-margin-wide;
+  padding-right: $page-margin-wide;
+}

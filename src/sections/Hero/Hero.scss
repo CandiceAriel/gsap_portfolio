@@ -1,0 +1,59 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/colors' as *;
+@use '../../styles/abstracts/spacing' as *;
+
+.hero{
+  padding-bottom: $spacing-xl;
+  &__content{
+    &-top{
+      border-bottom: 1px solid $border-glow;
+      padding-bottom: $spacing-md;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__tag{
+    font-family: $font-mono;
+    font-size: $text-base; 
+    letter-spacing: $tracking-wider; // 0.3em
+    text-transform: uppercase;
+    color: $yellow;
+  }
+  &__name{
+    font-family: $font-display;
+    font-size: clamp(48px, 8vw, 108px);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: $white;
+
+    em {
+      color: $yellow;
+    }
+  }
+
+  &__desc{
+    font-family: $font-primary;
+    font-size: $text-md;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: $tracking-tight; // 0.02em
+    color: $muted;
+  }
+
+  &__corner{
+    &_label{
+      font-family: $font-mono;
+      font-size: $text-md;       // 10px
+      letter-spacing: $tracking-normal; // 0.1em
+      text-transform: uppercase;
+      color: $muted;
+      line-height: 2.4;
+
+      strong {
+        font-weight: 400;        // mono has no true bold, keep it regular
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import React from 'react'
-import Hero from './sections/Hero'
+import Hero from './sections/Hero/Hero'
 import MyWorks from './sections/MyWorks'
 
 const App = () => {
   return (
     <main>
-      {/* <Hero /> */}
-      <MyWorks />
+      <Hero />
+      {/* <MyWorks /> */}
     </main>
     
   )

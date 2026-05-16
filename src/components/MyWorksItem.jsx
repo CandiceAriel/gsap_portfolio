@@ -19,7 +19,7 @@ export default function MyWorksItem({controls}) {
   const baseHeight = visibleHeight * 0.5;
 
   const quantity = textures.length;
-  const radius = 3; 
+  const radius = 5; 
   const { positionX, positionY, positionZ, rotationY } = controls;
 
   return (

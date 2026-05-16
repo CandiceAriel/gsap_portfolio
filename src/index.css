@@ -2,9 +2,16 @@
 @import "tailwindcss";
 
 @theme{
-  --font-bricolage: "Bricolage Grotesque", sans-serif;
-  --color-test: red;
-  --font-body: Inter, sans-serif;
+  --color-yellow: #E8FF00;
+  --color-black: #0A0A0A;
+  --color-white: #F0EDE8;
+
+  --color-gray-dark: #1A1A1A;
+  --color-gray-mid: #2A2A2A;
+
+  --color-muted: #888888;
+
+  --color-border-glow: rgba(232, 255, 0, 0.15);
 }
 
 body,
@@ -26,9 +33,6 @@ html{
   #hero{
     @apply relative h-screen w-full overflow-hidden;
 
-    h1{
-      @apply text-center text-[200px] font-bricolage font-bold;
-    }
 
   }
 
