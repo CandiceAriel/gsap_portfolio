@@ -13,7 +13,14 @@ body {
   background-color: $black;
 }
 
-section,
+section{
+  width: 100%;
+  min-height: 100dvh;
+  padding-left:  $page-margin-wide;
+  padding-right: $page-margin-wide;
+  padding-block: $spacing-xl;
+}
+
 footer {
   padding-left:  $page-margin-wide;
   padding-right: $page-margin-wide;

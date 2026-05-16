@@ -1,0 +1,92 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/colors' as *;
+@use '../../styles/abstracts/spacing' as *;
+
+.profile{
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+
+  &__content{
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xl ;
+    display: grid;
+    grid-template-columns: 1fr; // 1 Column default on mobile screens
+    gap: $spacing-xl;           // Stack layout on mobile
+    width: 100%;
+
+    // Switch smoothly to the design layout on desktop screens
+    @media (min-width: 1024px) {
+      // Splits the layout: Left gets 5 parts, Right gets 6 parts of space
+      grid-template-columns: 5fr 6fr; 
+      column-gap: clamp(40px, 6vw, 96px); // Responsive gap between columns
+      align-items: start; // Prevents elements from stretching vertically
+    }
+
+    &-left{
+      width: 100%;
+      color: $muted;
+      p{
+        font-family: $font-mono;
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        color: $white;
+      }
+    }
+    &-right{
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg; // Spaces out paragraph 1, paragraph 2, and skills block
+      width: 100%;
+      color: $muted;
+    }
+
+  }
+
+  &__skills{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: $spacing-md;
+      padding-block: $spacing-xs;
+      font-family: $font-mono;
+      font-size: $text-xs;
+      letter-spacing: 0.05em;
+    }
+
+    &-name {
+      color: $white;
+      flex-shrink: 0;
+      width: 45%; // Keeps the names perfectly aligned on the left
+    }
+
+    &-track {
+      height: 2px; // Ultra-thin, sleek tech indicator line
+      flex-grow: 1;
+      background-color: rgba($white, 0.1); // Empty line background shadow
+      position: relative;
+    }
+
+    &-bar {
+      height: 100%;
+      background-color: $yellow; // Your signature bright accent color
+      box-shadow: 0 0 8px rgba($yellow, 0.5); // Optional subtle sci-fi glow
+    }
+
+    &-level {
+      color: $muted; // Faded metadata look on the right side
+      font-size: $text-sm;
+      width: 28px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+  }
+}

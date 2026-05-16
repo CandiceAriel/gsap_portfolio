@@ -1,0 +1,16 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/colors' as *;
+@use '../../styles/abstracts/spacing' as *;
+
+.s-title{
+  
+  font-family: $font-mono;
+  font-size: $text-xs;       // 10px
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  color: $muted;
+  &__text{
+    margin-left: $spacing-xs;
+    color: $yellow;
+  }
+}

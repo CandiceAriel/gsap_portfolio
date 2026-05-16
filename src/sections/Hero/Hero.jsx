@@ -40,9 +40,9 @@ const Hero = () => {
       ".char-line2",
       {
         opacity: 0,
-      stagger: 0.08,
-      duration: 0.01, // nearly instant per char
-      ease: "none",
+        stagger: 0.08,
+        duration: 0.01, // nearly instant per char
+        ease: "none",
       },
       
     );
@@ -61,49 +61,52 @@ const Hero = () => {
   }, { scope: containerRef });
 
   return (
-    <section id="hero" className="hero flex flex-col justify-end">
-      <div className="hero__content-top flex flex-row">
-        <div className="w-3/5 flex flex-col">
-          <p className="hero__tag text-left">---  Front-end dev & Illustrator</p>
-          <h1 className="title hero__name text-left"  ref={containerRef}>
-            {/* Line 1 */}
-            <span className="line">
-              {line1.map((char, i) => (
-                <span key={i} className="char-line1" style={{ display: "inline-block" }}>
-                  {char}
-                </span>
-              ))}
-            </span>
-            <br/>
-            {/* Line 2 — yellow */}
-            <em>
-              {line2.map((char, i) => (
-                <span key={i} className="char-line2" style={{ display: "inline-block" }}>
-                  {char}
-                </span>
-              ))}
+    <section id="hero" >
+      <div className="hero__wrapper flex flex-col justify-end">
+        <div className="hero__content-top flex flex-row">
+          <div className="w-3/5 flex flex-col">
+            <p className="hero__tag text-left">---  Front-end dev & Illustrator</p>
+            <h1 className="hero__name text-left"  ref={containerRef}>
+              {/* Line 1 */}
+              <span className="hero__name-line1">
+                {line1.map((char, i) => (
+                  <span key={i} className="char-line1 inline-block">
+                    {char}
+                  </span>
+                ))}
+              </span>
+              <br/>
+              {/* Line 2 — yellow */}
+              <span className="hero__name-line2">
+                {line2.map((char, i) => (
+                  <span key={i} className="char-line2 inline-block">
+                    {char}
+                  </span>
+                ))}
 
-              {/* Blinking cursor after last char */}
-              <span className="cursor" style={{
-                display: "inline-block",
-                width: "3px",
-                height: "0.8em",
-                background: "var(--yellow)",
-                marginLeft: "6px",
-                verticalAlign: "middle",
-              }} />
-            </em>
+                {/* Blinking cursor after last char */}
+                <span className="cursor" style={{
+                  display: "inline-block",
+                  width: "3px",
+                  height: "0.8em",
+                  background: "var(--yellow)",
+                  marginLeft: "6px",
+                  verticalAlign: "middle",
+                }} />
+              </span>
 
-          </h1>
+            </h1>
+          </div>
+          <div className="w-2/5 flex flex-col justify-end">
+            <p className="hero__corner_label text-right">Region <strong>Asia / SEA</strong></p>
+            <p className="hero__corner_label text-right">Stack <strong>React · TS · GSAP</strong></p>
+            <p className="hero__corner_label text-right">Also <strong>Back-End Dev · Illustration</strong></p>
+            <p className="hero__corner_label text-right">Status <strong className="text-yellow">Available</strong></p>
+          </div>
         </div>
-        <div className="w-2/5 flex flex-col justify-end">
-          <p className="hero__corner_label text-right">Region <strong>Asia / SEA</strong></p>
-          <p className="hero__corner_label text-right">Stack <strong>React · TS · GSAP</strong></p>
-          <p className="hero__corner_label text-right">Also <strong>Back-End Dev · Illustration</strong></p>
-          <p className="hero__corner_label text-right">Status <strong className="text-yellow">Available</strong></p>
-        </div>
+        <p className="hero__desc text-left">Building interfaces that feel alive — <br/> where code meets craft and every pixel has a purpose.</p>
       </div>
-      <p className="hero__desc text-left">Building interfaces that feel alive — <br/> where code meets craft and every pixel has a purpose.</p>
+   
     </section>
   )
 }
