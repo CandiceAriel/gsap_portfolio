@@ -18,25 +18,3 @@ body,
 html{
   margin: 0px;
 }
-
-@layer utilities{
-  .flex-center{
-    @apply flex justify-center items-center;
-  }
-}
-
-@layer components{
-  .padding-x{
-    @apply px-5 md:px-10;
-  }
-
-  #hero{
-    @apply relative h-screen w-full overflow-hidden;
-
-
-  }
-
-  #myWork{
-    @apply py-5;
-  }
-}

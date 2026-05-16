@@ -1,5 +1,4 @@
 import { useTexture } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 
 const images = [
@@ -9,27 +8,24 @@ const images = [
   "/images/alone.jpg",
 ];
 
-export default function MyWorksItem({controls}) {
+export default function MyWorksItem() {
   const textures = useTexture(images);
-  const { camera } = useThree();
-
-  const distance = camera.position.z;
-  const vFov = THREE.MathUtils.degToRad(camera.fov);
-  const visibleHeight = 2 * Math.tan(vFov / 2) * distance;
-  const baseHeight = visibleHeight * 0.5;
 
   const quantity = textures.length;
   const radius = 5; 
-  const { positionX, positionY, positionZ, rotationY } = controls;
+  const FIXED_HEIGHT = 4.5; 
 
   return (
     <>
-      <group position={[positionX, positionY, positionZ]} rotation={[0, rotationY, 0]}>
+      {/* You can manually tweak these arrays if you ever want to offset the layout:
+        position={[X, Y, Z]}  |  rotation={[X, Y, Z]}
+      */}
+      <group position={[0, 0, 0]} rotation={[0, 0, 0]}>
         {textures.map((tex, i) => {
           if (!tex || !tex.image) return null;
 
           const aspect = tex.image.width / tex.image.height;
-          const height = baseHeight;
+          const height = FIXED_HEIGHT;
           const width = aspect * height;
 
           const degrees = i * (360 / quantity);
@@ -37,13 +33,8 @@ export default function MyWorksItem({controls}) {
 
           return (
             <group key={i} rotation={[0, radians, 0]}>
-              <mesh position={[0, 0, radius]} rotation={[0, 0, 0]}>
+              <mesh position={[0, 0, radius]}>
                 <planeGeometry args={[width, height]} />
-                {/* Since we aren't using RoundedBox or the <Image /> component,
-                  standard PlaneGeometry is always a sharp rectangle.
-                  To get rounded corners on a simple mesh, you usually 
-                  apply a mask texture to 'alphaMap'.
-                */}
                 <meshBasicMaterial 
                   map={tex} 
                   transparent={true}

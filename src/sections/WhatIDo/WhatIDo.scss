@@ -1,0 +1,85 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/colors' as *;
+@use '../../styles/abstracts/spacing' as *;
+
+.what-i-do{
+  &__grid{
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xl ;
+    display: grid;
+    grid-template-columns: 1fr; // Single column on phone layouts
+    gap: 2rem;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr); // Three exact fractional columns on desktop
+      column-gap: clamp(24px, 3vw, 48px); // Scales card gaps fluidly
+    }
+  }
+  &__card {
+    background-color: #0f0f0f; // Soft charcoal backdrop block color
+    border: 1px solid rgba($border-glow, 0.1); // Fine tech layout border lines
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      border-color: rgba($yellow, 0.4); // Subtle reactive highlight interactive response
+      transform: translateY(-4px);
+    }
+  }
+
+  &__card-number {
+    font-family: $font-mono;
+    font-size: $text-sm;
+    color: $yellow; // Bright brand color indicator text string
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+  }
+
+  // The Custom Icon Layout Matrix
+  &__card-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    height: 32px;
+    user-select: none;
+  }
+
+  &__card-icon-bracket {
+    font-family: $font-mono;
+    color: rgba($yellow, 0.3);
+    font-weight: 300;
+    font-size: 1.25rem;
+  }
+
+  &__card-icon-hex {
+    width: 24px;
+    height: 28px;
+    background-color: rgba($yellow, 0.2);
+    // Simple geometric clip path trick to make a hexagon without an image file asset
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border: 1px solid rgba($yellow, 0.6);
+  }
+
+  &__card-title {
+    font-family: $font-primary; // Using your broad structural headline sans font
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 800;
+    color: $white;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+  }
+
+  &__card-desc {
+    font-family: $font-primary;
+    font-size: 15px; // Matches standard descriptive layout density rules
+    font-weight: 300;
+    color: $muted; // Lower visual contrast weight for optimal body readability
+    line-height: 1.6;
+  }
+}

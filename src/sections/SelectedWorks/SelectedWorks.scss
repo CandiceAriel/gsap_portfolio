@@ -1,0 +1,23 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/colors' as *;
+@use '../../styles/abstracts/spacing' as *;
+
+.selected-works{
+  width: 100%;
+  min-height: 100dvh;   // Forces the section to be exactly full viewport height
+  position: relative;   // Absolute coordinate anchor point for inner layers
+  overflow: hidden;     // Hides 3D scene edges and prevents browser scroll glitches
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+  &__wrapper{
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  &__canvas-container {
+    width: 100%;
+    height: 100%;
+    z-index: 1;         // Sends the Three.js experience to the background
+  }
+}
