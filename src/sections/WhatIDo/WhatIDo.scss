@@ -4,8 +4,7 @@
 
 .what-i-do{
   &__grid{
-    margin-top: $spacing-xl;
-    margin-bottom: $spacing-xl ;
+    margin-top: $spacing-xs;
     display: grid;
     grid-template-columns: 1fr; // Single column on phone layouts
     gap: 2rem;
@@ -14,6 +13,8 @@
     @media (min-width: 1024px) {
       grid-template-columns: repeat(3, 1fr); // Three exact fractional columns on desktop
       column-gap: clamp(24px, 3vw, 48px); // Scales card gaps fluidly
+      margin-top: $spacing-xl;
+      margin-bottom: $spacing-xl ;
     }
   }
   &__card {

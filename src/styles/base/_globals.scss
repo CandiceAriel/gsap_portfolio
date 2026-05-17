@@ -15,10 +15,16 @@ body {
 
 section{
   width: 100%;
-  min-height: 100dvh;
-  padding-left:  $page-margin-wide;
-  padding-right: $page-margin-wide;
-  padding-block: $spacing-xl;
+  padding-left:  $page-margin-mobile;
+  padding-right: $page-margin-mobile;
+  padding-block: $spacing-xl; /* This padding is now safely contained inside the 100dvh */
+  box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    height: 100dvh;
+    padding-left:  $page-margin-wide;
+    padding-right: $page-margin-wide;
+  }
 }
 
 footer {

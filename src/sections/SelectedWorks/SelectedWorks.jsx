@@ -9,7 +9,7 @@ import './SelectedWorks.scss';
 const SelectedWorks = () => {
   return (
     <section id="selected-works" className="selected-works flex flex-col">
-      <div className="selected-works__wrapper grow-1 flex flex-col">
+      <div className="selected-works__wrapper grow-1 flex flex-col md:gap-md">
         <SectionTitle number="02" title="Selected Work"/>
         <div className="selected-works__canvas-container grow-1">
           {/* <Leva /> */}

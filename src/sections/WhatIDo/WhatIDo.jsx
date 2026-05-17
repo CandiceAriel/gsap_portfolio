@@ -7,17 +7,17 @@ const WhatIDo = () => {
     {
       num: '// 001',
       title: 'FRONT-END DEV',
-      desc: 'Vue, React, TypeScript, performant animations. From design tokens to deployed product — pixel-perfect execution with clean, maintainable code.'
+      desc: 'Crafting responsive, high-performance web interfaces with Vue, React, and TypeScript. Specializing in fluid motion design and pixel-perfect execution, bridging the gap between raw concept and semantic, maintainable code.'
     },
     {
       num: '// 002',
       title: 'BACK-END DEV',
-      desc: 'SQL, No-SQL, API Integration, Database architecture & management.'
+      desc: 'Building scalable, secure server-side foundations. Experienced in API orchestration, robust database architecture, and seamless integrations across both SQL and NoSQL ecosystems.'
     },
     {
       num: '// 003',
       title: 'ILLUSTRATION',
-      desc: "Character design, UI illustration, concept art. Editorial to game-ready. Style ranges from technical/flat to painterly/detailed."
+      desc: "Bringing ideas to life through character design, UI assets, and concept art. Adapting seamlessly from sharp, technical flat vectors to deeply layered, painterly aesthetics for editorial or interactive digital media."
     }
   ];
 

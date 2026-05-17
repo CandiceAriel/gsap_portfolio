@@ -7,17 +7,17 @@
   padding-bottom: $spacing-xl;
 
   &__content{
-    margin-top: $spacing-xl;
-    margin-bottom: $spacing-xl ;
+    margin-top:$spacing-xs;
     display: grid;
     grid-template-columns: 1fr; // 1 Column default on mobile screens
-    gap: $spacing-xl;           // Stack layout on mobile
+    gap: $spacing-md;           // Stack layout on mobile
     width: 100%;
 
     // Switch smoothly to the design layout on desktop screens
     @media (min-width: 1024px) {
+      gap: $spacing-xl; 
       // Splits the layout: Left gets 5 parts, Right gets 6 parts of space
-      grid-template-columns: 5fr 6fr; 
+      grid-template-columns: 5fr 3fr; 
       column-gap: clamp(40px, 6vw, 96px); // Responsive gap between columns
       align-items: start; // Prevents elements from stretching vertically
     }
@@ -37,7 +37,6 @@
     &-right{
       display: flex;
       flex-direction: column;
-      gap: $spacing-lg; // Spaces out paragraph 1, paragraph 2, and skills block
       width: 100%;
       color: $muted;
     }
@@ -49,7 +48,7 @@
     flex-direction: column;
     width: 100%;
     max-width: 500px;
-
+    margin-top: $spacing-md;
     &-item {
       display: flex;
       flex-direction: row;

@@ -6,10 +6,11 @@ import { useMediaQuery } from 'react-responsive';
 import { useGSAP } from '@gsap/react';
 import { TextPlugin, SplitText } from 'gsap/all';
 
+import { useScrollToNext } from "../../hooks/useScrollToNext";
 import './Hero.scss';
 
-const Hero = () => {
-  const isMobile = useMediaQuery({maxWidth: 768});
+const Hero = ({nextRef}) => {
+  const ref = useScrollToNext(nextRef);
   const containerRef = useRef(null);
 
    // Split your name into individual characters
@@ -61,21 +62,20 @@ const Hero = () => {
   }, { scope: containerRef });
 
   return (
-    <section id="hero" >
-      <div className="hero__wrapper flex flex-col justify-end">
-        <div className="hero__content-top flex flex-row">
-          <div className="w-3/5 flex flex-col">
-            <p className="hero__tag text-left">---  Front-end dev & Illustrator</p>
-            <h1 className="hero__name text-left"  ref={containerRef}>
+    <section ref={ref} id="hero" className="w-full h-dvh box-border flex flex-col justify-end px-page-wide py-xl" >
+      <div className="hero__wrapper flex flex-col">
+        <div className="hero__content-top flex flex-col pb-md gap-[1.25rem] md:flex-row">
+          <div className="w-full flex flex-col md:w-3/5">
+            <p className="hero__tag text-left">-  Front-end dev & Illustrator</p>
+            <div className="hero__name text-left" ref={containerRef}>
               {/* Line 1 */}
-              <span className="hero__name-line1">
+              <p className="hero__name-line1">
                 {line1.map((char, i) => (
                   <span key={i} className="char-line1 inline-block">
                     {char}
                   </span>
                 ))}
-              </span>
-              <br/>
+              </p>
               {/* Line 2 — yellow */}
               <span className="hero__name-line2">
                 {line2.map((char, i) => (
@@ -95,13 +95,13 @@ const Hero = () => {
                 }} />
               </span>
 
-            </h1>
+            </div>
           </div>
-          <div className="w-2/5 flex flex-col justify-end">
-            <p className="hero__corner_label text-right">Region <strong>Asia / SEA</strong></p>
-            <p className="hero__corner_label text-right">Stack <strong>React · TS · GSAP</strong></p>
-            <p className="hero__corner_label text-right">Also <strong>Back-End Dev · Illustration</strong></p>
-            <p className="hero__corner_label text-right">Status <strong className="text-yellow">Available</strong></p>
+          <div className="w-full flex flex-col md:w-2/5 justify-end">
+            <p className="hero__corner_label text-left md:text-right">Region <strong>Asia / SEA</strong></p>
+            <p className="hero__corner_label text-left md:text-right">Stack <strong>Vue · React · TS · GSAP</strong></p>
+            <p className="hero__corner_label text-left md:text-right">Also <strong>Back-End Dev · Illustration</strong></p>
+            <p className="hero__corner_label text-left md:text-right">Status <strong className="text-yellow">Available</strong></p>
           </div>
         </div>
         <p className="hero__desc text-left">Building interfaces that feel alive — <br/> where code meets craft and every pixel has a purpose.</p>

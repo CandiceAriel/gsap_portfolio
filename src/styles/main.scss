@@ -1,3 +1,25 @@
 @use './base/fonts';
 @use './base/typography';
 @use './base/globals';
+
+@import "tailwindcss";
+
+@theme {
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-margin-desktop: 3rem;
+  --spacing-margin-wide: 5rem;
+
+  --spacing-xs: 1rem;
+  --spacing-sm: 1.5rem;
+  --spacing-md: 3rem;
+  --spacing-lg: 5rem;
+  --spacing-xl: 7.5rem;
+
+  --tracking-tight: 0.02em;
+  --tracking-normal: 0.1em;
+  --tracking-wide: 0.2em;
+  --tracking-wider: 0.3em;
+}
+
+/* Import your custom styling compiled files here at the bottom if needed */
