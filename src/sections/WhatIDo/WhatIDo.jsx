@@ -7,22 +7,22 @@ const WhatIDo = () => {
     {
       num: '// 001',
       title: 'FRONT-END DEV',
-      desc: 'React, TypeScript, performant animations. From design tokens to deployed product — pixel-perfect execution with clean, maintainable code.'
+      desc: 'Vue, React, TypeScript, performant animations. From design tokens to deployed product — pixel-perfect execution with clean, maintainable code.'
     },
     {
       num: '// 002',
-      title: 'ILLUSTRATION',
-      desc: 'Character design, UI illustration, concept art. Editorial to game-ready. Style ranges from technical/flat to painterly/detailed.'
+      title: 'BACK-END DEV',
+      desc: 'SQL, No-SQL, API Integration, Database architecture & management.'
     },
     {
       num: '// 003',
-      title: 'UI / UX DESIGN',
-      desc: "Interfaces that bridge craft and function. Design systems, component libraries, interaction design — with a developer's mindset throughout."
+      title: 'ILLUSTRATION',
+      desc: "Character design, UI illustration, concept art. Editorial to game-ready. Style ranges from technical/flat to painterly/detailed."
     }
   ];
 
   return (
-    <section id="WhatIDo" className="what-i-do">
+    <section id="what-i-do" className="what-i-do">
       <div className="what-i-do__wrapper">
         <SectionTitle number="03" title="What I Do"/>
         <div className="what-i-do__grid flex flex-row">

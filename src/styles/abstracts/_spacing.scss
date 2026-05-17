@@ -1,14 +1,15 @@
-$page-margin-mobile:  20px;
-$page-margin-tablet:  32px;
-$page-margin-desktop: 48px;
-$page-margin-wide:    80px; 
+// === PAGE MARGINS ===
+$page-margin-mobile:  1.25rem; // 20px
+$page-margin-tablet:  2rem;    // 32px
+$page-margin-desktop: 3rem;    // 48px
+$page-margin-wide:    5rem;    // 80px 
 
 // === SPACING ===
-$spacing-xs:  16px;
-$spacing-sm:  24px;
-$spacing-md:  48px;
-$spacing-lg:  80px;
-$spacing-xl:  120px;
+$spacing-xs:  1rem;    // 16px
+$spacing-sm:  1.5rem;  // 24px
+$spacing-md:  3rem;    // 48px
+$spacing-lg:  5rem;    // 80px
+$spacing-xl:  7.5rem;  // 120px
 
 // === LETTER SPACING ===
 $tracking-tight:  0.02em;

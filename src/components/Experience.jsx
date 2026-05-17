@@ -15,14 +15,21 @@ const Experience = () => {
       }
     >
       {/* 🎥 Camera */}
-      <PerspectiveCamera makeDefault position={[0, 0, 15]} fov={40} />
+      <PerspectiveCamera makeDefault position={[0, 0, 15]} fov={30} />
 
       {/* 💡 Lighting */}
       <ambientLight intensity={0.7} />
       <directionalLight position={[3, 3, 3]} intensity={1} />
 
       <MyWorksItem/>
-      <OrbitControls />
+      <OrbitControls 
+        enableZoom={false}
+        enablePan={false}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
+        enableDamping
+        dampingFactor={0.05}
+      />
     </Suspense>
   );
 };

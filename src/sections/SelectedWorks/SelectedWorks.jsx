@@ -8,10 +8,10 @@ import './SelectedWorks.scss';
 
 const SelectedWorks = () => {
   return (
-    <section id="myWork" className="selected-works">
-      <div className="selected-works__wrapper">
+    <section id="selected-works" className="selected-works flex flex-col">
+      <div className="selected-works__wrapper grow-1 flex flex-col">
         <SectionTitle number="02" title="Selected Work"/>
-        <div className="selected-works__canvas-container">
+        <div className="selected-works__canvas-container grow-1">
           {/* <Leva /> */}
           <Canvas>
             <Experience />
