@@ -74,9 +74,9 @@ const Hero = ({nextRef}) => {
           <div className="w-full flex flex-col md:w-4/5">
             {/* <p className="hero__tag text-left">Front-end developer</p>
             <p className="hero__tag-outlined text-left">Illustrator</p> */}
-            <div className="hero__name text-left" ref={containerRef}>
+            <div className="hero__tag text-left" ref={containerRef}>
               {/* Line 1 — Front-End Developer */}
-              <p className="hero__name-line1 block leading-none font-heading font-black tracking-tighter text-5xl md:text-8xl">
+              <p className="hero__tag-line1 block leading-none font-heading font-black tracking-tighter text-5xl md:text-8xl">
                 {line1Part1.map((char, i) => (
                   <span key={`l1p1-${i}`} className="char-line1 inline-block">
                     {char}
@@ -91,7 +91,7 @@ const Hero = ({nextRef}) => {
               </p>
 
               {/* Line 2 — Illustrator (Changed from span to div) */}
-              <div className="hero__name-line2 block leading-none text-yellow-400 mt-2 font-display text-5xl md:text-8xl">
+              <div className="hero__tag-line2 block leading-none mt-2 font-display text-5xl md:text-8xl">
                 {line2.map((char, i) => (
                   <span key={`l2-${i}`} className="char-line2 inline-block text-transparent">
                     {char}
