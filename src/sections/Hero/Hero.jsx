@@ -2,7 +2,6 @@ import React, { Suspense, useRef } from 'react';
 import gsap from 'gsap';
 import { Canvas } from '@react-three/fiber';
 import { ScrollControls, Environment, Float, Loader } from '@react-three/drei';
-import { useMediaQuery } from 'react-responsive';
 import { useGSAP } from '@gsap/react';
 import { TextPlugin, SplitText } from 'gsap/all';
 
@@ -14,13 +13,14 @@ const Hero = ({nextRef}) => {
   const containerRef = useRef(null);
 
    // Split your name into individual characters
-  const line1 = "HI, I'M ".split("");
-  const line2 = "CANDICE".split("");
+  const line1 = "FRONT-END".split("");
+  const line2 = "DEV".split("");
+  const line3 = "ILLUSTRATOR".split("");
 
   useGSAP(() => {
     const tl = gsap.timeline({ delay: 0.6 });
 
-    // 1. Fade up the whole block first
+    // Fade whole block
     tl.from(containerRef.current, {
       y: 30,
       opacity: 0,
@@ -28,27 +28,31 @@ const Hero = ({nextRef}) => {
       ease: "power2.out",
     });
 
-    // 2. Type line 1 — each char fades + slides in
+    // FRONT-END
     tl.from(".char-line1", {
       opacity: 0,
       stagger: 0.08,
-      duration: 0.01, // nearly instant per char
+      duration: 0.01,
       ease: "none",
     });
 
-    // 3. Type line 2 (yellow) — slightly faster
-    tl.from(
-      ".char-line2",
-      {
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.01, // nearly instant per char
-        ease: "none",
-      },
-      
-    );
+    // DEV
+    tl.from(".char-line2", {
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.01,
+      ease: "none",
+    });
 
-    // 4. Cursor blink then fade out
+    // ILLUSTRATOR
+    tl.from(".char-line3", {
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.01,
+      ease: "none",
+    });
+
+    // Cursor blink
     tl.to(".cursor", {
       opacity: 0,
       repeat: 4,
@@ -66,35 +70,47 @@ const Hero = ({nextRef}) => {
       <div className="hero__wrapper flex flex-col">
         <div className="hero__content-top flex flex-col pb-md gap-[1.25rem] md:flex-row">
           <div className="w-full flex flex-col md:w-3/5">
-            <p className="hero__tag text-left">-  Front-end dev & Illustrator</p>
-            <div className="hero__name text-left" ref={containerRef}>
-              {/* Line 1 */}
-              <p className="hero__name-line1">
+            {/* <p className="hero__tag text-left">-  Front-end dev & Illustrator</p> */}
+            <div className="hero__tag text-left" ref={containerRef}>
+               {/* Line 1 */}
+              `<p className="hero__tag-line1 text-white">
                 {line1.map((char, i) => (
                   <span key={i} className="char-line1 inline-block">
                     {char}
                   </span>
                 ))}
               </p>
-              {/* Line 2 — yellow */}
-              <span className="hero__name-line2">
+
+              {/* Line 2 */}
+              <p className="hero__tag-line2 text-white">
                 {line2.map((char, i) => (
                   <span key={i} className="char-line2 inline-block">
                     {char}
                   </span>
                 ))}
+              </p>
 
-                {/* Blinking cursor after last char */}
-                <span className="cursor" style={{
-                  display: "inline-block",
-                  width: "3px",
-                  height: "0.8em",
-                  background: "var(--yellow)",
-                  marginLeft: "6px",
-                  verticalAlign: "middle",
-                }} />
-              </span>
+              {/* Line 3 */}
+              <p className="hero__tag-line3 text-yellow">
+                {line3.map((char, i) => (
+                  <span key={i} className="char-line3 inline-block">
+                    {char}
+                  </span>
+                ))}
 
+                {/* Cursor */}
+                <span
+                  className="cursor"
+                  style={{
+                    display: "inline-block",
+                    width: "3px",
+                    height: "0.8em",
+                    background: "var(--yellow)",
+                    marginLeft: "6px",
+                    verticalAlign: "middle",
+                  }}
+                />
+              </p>
             </div>
           </div>
           <div className="w-full flex flex-col md:w-2/5 justify-end">

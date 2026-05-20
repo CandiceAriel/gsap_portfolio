@@ -15,6 +15,7 @@
 
     // Switch smoothly to the design layout on desktop screens
     @media (min-width: 1024px) {
+      margin-top: $spacing-xl;
       gap: $spacing-xl; 
       // Splits the layout: Left gets 5 parts, Right gets 6 parts of space
       grid-template-columns: 5fr 3fr; 
