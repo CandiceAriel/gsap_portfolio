@@ -8,14 +8,16 @@ import { TextPlugin, SplitText } from 'gsap/all';
 
 import { useScrollToNext } from "../../hooks/useScrollToNext";
 import './Hero.scss';
+import heroBg from '/images/hero_bg.png';
 
 const Hero = ({nextRef}) => {
   const ref = useScrollToNext(nextRef);
   const containerRef = useRef(null);
 
    // Split your name into individual characters
-  const line1 = "HI, I'M ".split("");
-  const line2 = "CANDICE".split("");
+  const line1Part1 = "FRONT-END".split("");
+  const line1Part2 = "DEVELOPER".split("");
+  const line2 = "ILLUSTRATOR".split("");
 
   useGSAP(() => {
     const tl = gsap.timeline({ delay: 0.6 });
@@ -49,55 +51,59 @@ const Hero = ({nextRef}) => {
     );
 
     // 4. Cursor blink then fade out
-    tl.to(".cursor", {
-      opacity: 0,
-      repeat: 4,
-      yoyo: true,
-      duration: 0.3,
-      ease: "none",
-    }).to(".cursor", {
-      opacity: 0,
-      duration: 0.2,
-    });
+    // tl.to(".cursor", {
+    //   opacity: 0,
+    //   repeat: -1,
+    //   yoyo: true,
+    //   duration: 0.3,
+    //   ease: "none",
+    // }).to(".cursor", {
+    //   opacity: 0,
+    //   duration: 0.2,
+    // });
   }, { scope: containerRef });
 
   return (
-    <section ref={ref} id="hero" className="w-full h-dvh box-border flex flex-col justify-end px-page-wide py-xl" >
+    <section ref={ref} id="hero" className="w-full h-dvh box-border relative flex flex-col justify-end px-page-wide py-xl" >
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-multiply pointer-events-none" 
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
       <div className="hero__wrapper flex flex-col">
         <div className="hero__content-top flex flex-col pb-md gap-[1.25rem] md:flex-row">
-          <div className="w-full flex flex-col md:w-3/5">
-            <p className="hero__tag text-left">-  Front-end dev & Illustrator</p>
+          <div className="w-full flex flex-col md:w-4/5">
+            {/* <p className="hero__tag text-left">Front-end developer</p>
+            <p className="hero__tag-outlined text-left">Illustrator</p> */}
             <div className="hero__name text-left" ref={containerRef}>
-              {/* Line 1 */}
-              <p className="hero__name-line1">
-                {line1.map((char, i) => (
-                  <span key={i} className="char-line1 inline-block">
+              {/* Line 1 — Front-End Developer */}
+              <p className="hero__name-line1 block leading-none font-heading font-black tracking-tighter text-5xl md:text-8xl">
+                {line1Part1.map((char, i) => (
+                  <span key={`l1p1-${i}`} className="char-line1 inline-block">
+                    {char}
+                  </span>
+                ))}
+                <br />
+                {line1Part2.map((char, i) => (
+                  <span key={`l1p2-${i}`} className="char-line1 inline-block">
                     {char}
                   </span>
                 ))}
               </p>
-              {/* Line 2 — yellow */}
-              <span className="hero__name-line2">
+
+              {/* Line 2 — Illustrator (Changed from span to div) */}
+              <div className="hero__name-line2 block leading-none text-yellow-400 mt-2 font-display text-5xl md:text-8xl">
                 {line2.map((char, i) => (
-                  <span key={i} className="char-line2 inline-block">
+                  <span key={`l2-${i}`} className="char-line2 inline-block text-transparent">
                     {char}
                   </span>
                 ))}
 
-                {/* Blinking cursor after last char */}
-                <span className="cursor" style={{
-                  display: "inline-block",
-                  width: "3px",
-                  height: "0.8em",
-                  background: "var(--yellow)",
-                  marginLeft: "6px",
-                  verticalAlign: "middle",
-                }} />
-              </span>
-
+                {/* The Blinking Cursor */}
+                {/* <span className="cursor inline-block w-[30px] h-[2px] bg-black ml-1.5 align-baseline" /> */}
+              </div>
             </div>
           </div>
-          <div className="w-full flex flex-col md:w-2/5 justify-end">
+          <div className="w-full flex flex-col md:w-1/5 justify-end">
             <p className="hero__corner_label text-left md:text-right">Region <strong>Asia / SEA</strong></p>
             <p className="hero__corner_label text-left md:text-right">Stack <strong>Vue · React · TS · GSAP</strong></p>
             <p className="hero__corner_label text-left md:text-right">Also <strong>Back-End Dev · Illustration</strong></p>

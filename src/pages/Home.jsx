@@ -16,7 +16,7 @@ const Home = () => {
     <div className="w-full min-h-screen overflow-x-hidden">
       <Hero nextRef={sec2} />
       <Profile ref={sec2} nextRef={sec3} />
-      <SelectedWorks/>
+      {/* <SelectedWorks/> */}
       <WhatIDo/>
       {/* <Works /> */}
     </div>

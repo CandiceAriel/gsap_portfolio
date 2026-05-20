@@ -22,7 +22,7 @@ const Profile = ({nextRef}) => {
     <section ref={ref} id="profile">
       <div className="profile__wrapper flex flex-col justify-end">
         <SectionTitle number="01" title="Profile"/>
-        <div className="profile__content flex flex-row">
+        <div className="profile__content flex flex-row md:">
           <div className="profile__content-left flex flex-row md:w-1/2">
             <p>I build things <br />
             that <span className="text-yellow">don't look</span> <br />

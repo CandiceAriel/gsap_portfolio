@@ -2,8 +2,6 @@
 @use './base/typography';
 @use './base/globals';
 
-@import "tailwindcss";
-
 @theme {
   --spacing-margin-mobile: 1.25rem;
   --spacing-margin-tablet: 2rem;
