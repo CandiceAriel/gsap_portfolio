@@ -24,7 +24,7 @@ const WhatIDo = () => {
   return (
     <section id="what-i-do" className="what-i-do">
       <div className="what-i-do__wrapper">
-        <SectionTitle number="03" title="What I Do"/>
+        <SectionTitle number="02" title="What I Do"/>
         <div className="what-i-do__grid flex flex-row">
             {services.map((service, index) => (
             <div key={index} className="what-i-do__card">

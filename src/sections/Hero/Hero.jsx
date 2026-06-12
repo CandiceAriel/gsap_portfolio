@@ -116,7 +116,7 @@ const Hero = ({nextRef}) => {
           <div className="w-full flex flex-col md:w-2/5 justify-end">
             <p className="hero__corner_label text-left md:text-right">Region <strong>Asia / SEA</strong></p>
             <p className="hero__corner_label text-left md:text-right">Stack <strong>Vue · React · TS · GSAP</strong></p>
-            <p className="hero__corner_label text-left md:text-right">Also <strong>Back-End Dev · Illustration</strong></p>
+            <p className="hero__corner_label text-left md:text-right">Also <strong>Back-End Dev</strong></p>
             <p className="hero__corner_label text-left md:text-right">Status <strong className="text-yellow">Available</strong></p>
           </div>
         </div>
